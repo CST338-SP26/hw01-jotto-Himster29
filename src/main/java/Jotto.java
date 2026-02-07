@@ -9,13 +9,14 @@ import java.util.ArrayList;
 
 public class Jotto {
     //Variables
-    int WORD_SIZE, score;
-    String currentWord = "";
-    String filename = "";
-    ArrayList<String> playGuesses = new ArrayList<>();
-    ArrayList<String> playWords = new ArrayList<>();
-    ArrayList<String> wordList = new ArrayList<>();
-    boolean DEBUG;
+    private int WORD_SIZE = 5;
+    private int score = 0;
+    private String currentWord = "";
+    private String filename = "wordList.txt";
+    private ArrayList<String> playGuesses = new ArrayList<>();
+    private ArrayList<String> playWords = new ArrayList<>();
+    private ArrayList<String> wordList = new ArrayList<>();
+    private boolean DEBUG = true;
 
     //Methods
     public boolean pickWord(){
@@ -73,4 +74,11 @@ public class Jotto {
     void updateWordList(){
 
     }
+
+    public Jotto(String filename) {
+        this.filename = filename;
+        readWords(this.filename);
+    }
+
+
 }

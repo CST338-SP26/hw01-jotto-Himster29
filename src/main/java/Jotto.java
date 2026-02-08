@@ -32,7 +32,7 @@ public class Jotto {
     }
 
     public ArrayList<String> showPlayerGuesses() {
-
+        return playGuesses;
     }
 
     void playerGuessScores(ArrayList<String> word) {
@@ -44,12 +44,16 @@ public class Jotto {
     }
 
     public ArrayList<String> readWords(){
+        //clears the array before adding anything
         wordList.clear();
 
+        //error catch block
         try{
+            //file and scanner objects
             File file = new File(this.filename);
             Scanner sc = new Scanner(file);
 
+            //adds each word to the array
             while (sc.hasNextLine()){
                 String input = sc.nextLine().trim();
                 if(!input.isEmpty()){
@@ -63,6 +67,7 @@ public class Jotto {
 
             sc.close();
 
+        //error message if file not found
         } catch(FileNotFoundException e){
             System.out.println("Couldn't open " + this.filename);
         }
@@ -71,31 +76,39 @@ public class Jotto {
     }
 
     public void play(){
+        Scanner sc = new Scanner(System.in);
+
+        String input = sc.next().trim().toLowerCase();
+
 
     }
 
     int guess(){
-
+        return 2;
     }
 
     public ArrayList<String> getPlayedWords() {
 
+        return playWords;
     }
 
     public String getCurrentWord(){
-
+        return currentWord;
     }
 
     public int getLetterCount(String word){
-
+        int count = 0;
+        return count;
     }
 
     public String showPlayedWords(){
-
+        return currentWord;
     }
 
     public boolean addPlayerGuess(String word){
+        boolean check= false;
 
+        return check;
     }
 
     void updateWordList(){

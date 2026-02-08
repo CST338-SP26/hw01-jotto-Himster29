@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JottoTest" tests="18" skipped="0" failures="5" errors="0" timestamp="2026-02-08T04:13:51.030Z" hostname="HYPC" time="0.035">
+  <properties/>
+  <testcase name="showPlayedWords()" classname="JottoTest" time="0.013">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;No words have been played.&gt; but was: &lt;No words have been played&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;No words have been played.&gt; but was: &lt;No words have been played&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1141)
+	at app//JottoTest.showPlayedWords(JottoTest.java:116)
+	at java.base@17.0.18/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="setCurrentWord()" classname="JottoTest" time="0.0"/>
+  <testcase name="showPlayerGuesses()" classname="JottoTest" time="0.003">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;false&gt; but was: &lt;true&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;false&gt; but was: &lt;true&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertFalse.failNotFalse(AssertFalse.java:63)
+	at app//org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:36)
+	at app//org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:31)
+	at app//org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:227)
+	at app//JottoTest.showPlayerGuesses(JottoTest.java:143)
+	at java.base@17.0.18/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="readWords()" classname="JottoTest" time="0.004"/>
+  <testcase name="showWordList()" classname="JottoTest" time="0.001"/>
+  <testcase name="pickWord()" classname="JottoTest" time="0.002">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;null&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;null&gt; but was: &lt;&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertNull.failNotNull(AssertNull.java:50)
+	at app//org.junit.jupiter.api.AssertNull.assertNull(AssertNull.java:35)
+	at app//org.junit.jupiter.api.AssertNull.assertNull(AssertNull.java:30)
+	at app//org.junit.jupiter.api.Assertions.assertNull(Assertions.java:275)
+	at app//JottoTest.pickWord(JottoTest.java:169)
+	at java.base@17.0.18/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="getPlayedWords()" classname="JottoTest" time="0.0"/>
+  <testcase name="getLetterCount()" classname="JottoTest" time="0.002">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;5&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;5&gt; but was: &lt;0&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:527)
+	at app//JottoTest.getLetterCount(JottoTest.java:156)
+	at java.base@17.0.18/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="getCurrentWord()" classname="JottoTest" time="0.001"/>
+  <testcase name="score()" classname="JottoTest" time="0.0"/>
+  <testcase name="updateWordList()" classname="JottoTest" time="0.001"/>
+  <testcase name="playerGuessScores()" classname="JottoTest" time="0.001"/>
+  <testcase name="addPlayerGuess()" classname="JottoTest" time="0.001">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at app//org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at app//org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at app//org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
+	at app//JottoTest.addPlayerGuess(JottoTest.java:188)
+	at java.base@17.0.18/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="setFilename()" classname="JottoTest" time="0.0"/>
+  <testcase name="getFilename()" classname="JottoTest" time="0.001"/>
+  <testcase name="getPlayerGuesses()" classname="JottoTest" time="0.002"/>
+  <testcase name="getScore()" classname="JottoTest" time="0.001"/>
+  <testcase name="getWordList()" classname="JottoTest" time="0.0"/>
+  <system-out><![CDATA[Checking oiled
+Checking grant
+Checking adieu
+Checking salet
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

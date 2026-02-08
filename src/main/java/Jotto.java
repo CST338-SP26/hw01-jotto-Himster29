@@ -40,7 +40,7 @@ public class Jotto {
     }
 
     public ArrayList<String> readWords(String word){
-
+        Scanner
     }
 
     public void play(){

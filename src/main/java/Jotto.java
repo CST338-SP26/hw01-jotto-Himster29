@@ -5,7 +5,11 @@
  *
  **/
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 
 public class Jotto {
     //Variables
@@ -39,8 +43,31 @@ public class Jotto {
 
     }
 
-    public ArrayList<String> readWords(String word){
-        Scanner
+    public ArrayList<String> readWords(){
+        wordList.clear();
+
+        try{
+            File file = new File(this.filename);
+            Scanner sc = new Scanner(file);
+
+            while (sc.hasNextLine()){
+                String input = sc.nextLine().trim();
+                if(!input.isEmpty()){
+                    if(!wordList.contains(input)){
+                        wordList.add(input);
+                    }
+
+                }
+
+            }
+
+            sc.close();
+
+        } catch(FileNotFoundException e){
+            System.out.println("Couldn't open " + this.filename);
+        }
+
+        return wordList;
     }
 
     public void play(){
@@ -77,7 +104,7 @@ public class Jotto {
 
     public Jotto(String filename) {
         this.filename = filename;
-        readWords(this.filename);
+        readWords();
     }
 
 

@@ -28,7 +28,19 @@ public class Jotto {
     }
 
     public String showWordList(){
-        return "";
+        //checks if the list is empty
+        if (wordList.isEmpty()) {
+            return "No words are on the list";
+        }
+
+        StringBuilder sb = new StringBuilder("Current word list:\n");
+
+        //adding all the words for the list
+        for (String word : wordList) {
+            sb.append(word).append("\n");
+        }
+
+        return sb.toString();
     }
 
     public ArrayList<String> showPlayerGuesses() {
@@ -78,8 +90,53 @@ public class Jotto {
     public void play(){
         Scanner sc = new Scanner(System.in);
 
-        String input = sc.next().trim().toLowerCase();
+        boolean playing = true;
 
+
+
+        while(playing){
+
+            System.out.println("Welcome to the game.");
+            //System.out.println("Current Score: " + getScore());
+            System.out.println("=-=-=-=-=-=-=-=-=-=-=");
+            System.out.println("Choose one of the following:");
+            System.out.println("1:        Start the game");
+            System.out.println("2:        See the word list");
+            System.out.println("3:        See the chosen words");
+            System.out.println("4:        Show Player guesses");
+            System.out.println("zz to exit");
+            System.out.println("=-=-=-=-=-=-=-=-=-=-=");
+            System.out.print("What is your choice: ");
+
+            String input = sc.nextLine().trim().toLowerCase();
+
+            switch(input){
+                case "1", "one" ->{
+                    if (pickWord()) {
+                        score = guess();
+                    } else {
+                        showPlayerGuesses();
+                    }
+                }
+                case "2", "two" ->{
+                    showWordList();
+                }
+                case "3", "three" ->{
+                    showPlayedWords();
+                }
+                case "4", "four" ->{
+                    showPlayerGuesses();
+                }
+                case "zz" ->{
+                    playing = false;
+
+                }
+                default -> {
+                    System.out.printf("I don't know what \"%s\" is.%n", input);
+                }
+            }
+        }
+        sc.close();
 
     }
 
@@ -101,9 +158,22 @@ public class Jotto {
         return count;
     }
 
-    public String showPlayedWords(){
-        return currentWord;
+    public String showPlayedWords() {
+        //checks if the list is empty
+        if (playWords.isEmpty()) {
+            return "No words have been played";
+        }
+
+        StringBuilder sb = new StringBuilder("Current list of played words:\n");
+
+        //adding all the words for the list
+        for (String word : playWords) {
+            sb.append(word).append("\n");
+        }
+
+        return sb.toString();
     }
+
 
     public boolean addPlayerGuess(String word){
         boolean check= false;

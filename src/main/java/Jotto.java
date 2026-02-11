@@ -22,6 +22,9 @@ public class Jotto {
     private ArrayList<String> wordList = new ArrayList<>();
     private boolean DEBUG = true;
 
+    private Scanner sc = new Scanner(System.in);
+
+
     //Methods
     public boolean pickWord(){
         return false;
@@ -44,6 +47,28 @@ public class Jotto {
     }
 
     public ArrayList<String> showPlayerGuesses() {
+
+        //checks if the list is empty
+        if (playGuesses.isEmpty()) {
+            System.out.println("No guesses yet");
+            return playGuesses;
+        } else {
+            System.out.println("Current player guesses:");
+
+            //print each guess on its own line
+            for (String word : playGuesses) {
+                System.out.println(word);
+            }
+
+            //ask user if they want to update the list
+            System.out.print("Update word list (y/n)? ");
+            String input = sc.nextLine().trim().toLowerCase();
+
+            if(input.equals("y") || input.equals("yes")){
+                updateWordList();
+                System.out.println(showWordList());
+            }
+        }
         return playGuesses;
     }
 
@@ -88,7 +113,7 @@ public class Jotto {
     }
 
     public void play(){
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
 
         boolean playing = true;
 
@@ -141,7 +166,64 @@ public class Jotto {
     }
 
     int guess(){
-        return 2;
+        ArrayList<String> currentGuesses = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        int letterCount = 0;
+        int score = WORD_SIZE+1;
+        String wordGuess = "";
+
+        //enters loop, exits loop when pressed q or correct guess
+        while(true){
+
+            System.out.println("Current Score: " + score);
+            System.out.print("What is your guess (q to quit):");
+
+            wordGuess = sc.nextLine().toLowerCase().trim();
+
+            //checks for quit condition
+            if(wordGuess.equals("q")){
+                return Math.min(score, 0);
+            }
+
+            //checking for word length
+            if(wordGuess.length() != WORD_SIZE){
+                System.out.println("Word must be 5 characters (" + wordGuess + " is " + wordGuess.length() + ")");
+                continue;
+            }
+
+            //checking for repeat guesses
+            if(currentGuesses.contains(wordGuess)){
+                System.out.println(wordGuess + " has already been guessed");// exact wording needed
+                continue;
+            }
+
+            addPlayerGuess(wordGuess);
+
+            //checking for correct word guess
+            if(wordGuess.equals(currentWord)){
+                System.out.println("DINGDINGDING!!! the word was " + wordGuess);
+                currentGuesses.add(wordGuess);
+                playerGuessScores(currentGuesses);
+                return score;
+            }
+
+            currentGuesses.add(wordGuess);
+
+            //checking for how many matches
+            letterCount = getLetterCount(wordGuess);
+
+            if(letterCount != WORD_SIZE){
+                System.out.println(wordGuess + " has a Jotto score of " + letterCount);
+            } else{
+                System.out.println("Word you chose is an anagram."); // exact wording needed
+            }
+
+            score--;
+
+            playerGuessScores(currentGuesses);
+
+        }
+        //return score;
     }
 
     public ArrayList<String> getPlayedWords() {
@@ -155,6 +237,12 @@ public class Jotto {
 
     public int getLetterCount(String word){
         int count = 0;
+
+        if(word.equals(currentWord)){
+            return 5;
+        }
+
+
         return count;
     }
 

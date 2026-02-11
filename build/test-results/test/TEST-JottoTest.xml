@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="JottoTest" tests="18" skipped="0" failures="5" errors="0" timestamp="2026-02-08T04:13:51.030Z" hostname="HYPC" time="0.035">
+<testsuite name="JottoTest" tests="18" skipped="0" failures="5" errors="0" timestamp="2026-02-11T04:37:05.226Z" hostname="HYPC" time="0.036">
   <properties/>
-  <testcase name="showPlayedWords()" classname="JottoTest" time="0.013">
+  <testcase name="showPlayedWords()" classname="JottoTest" time="0.012">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;No words have been played.&gt; but was: &lt;No words have been played&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;No words have been played.&gt; but was: &lt;No words have been played&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -15,8 +15,8 @@
 	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
 </failure>
   </testcase>
-  <testcase name="setCurrentWord()" classname="JottoTest" time="0.0"/>
-  <testcase name="showPlayerGuesses()" classname="JottoTest" time="0.003">
+  <testcase name="setCurrentWord()" classname="JottoTest" time="0.001"/>
+  <testcase name="showPlayerGuesses()" classname="JottoTest" time="0.007">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;false&gt; but was: &lt;true&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;false&gt; but was: &lt;true&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -30,7 +30,7 @@
 	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
 </failure>
   </testcase>
-  <testcase name="readWords()" classname="JottoTest" time="0.004"/>
+  <testcase name="readWords()" classname="JottoTest" time="0.002"/>
   <testcase name="showWordList()" classname="JottoTest" time="0.001"/>
   <testcase name="pickWord()" classname="JottoTest" time="0.002">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;null&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;null&gt; but was: &lt;&gt;
@@ -47,7 +47,7 @@
 </failure>
   </testcase>
   <testcase name="getPlayedWords()" classname="JottoTest" time="0.0"/>
-  <testcase name="getLetterCount()" classname="JottoTest" time="0.002">
+  <testcase name="getLetterCount()" classname="JottoTest" time="0.001">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;5&gt; but was: &lt;0&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;5&gt; but was: &lt;0&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -61,11 +61,11 @@
 	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
 </failure>
   </testcase>
-  <testcase name="getCurrentWord()" classname="JottoTest" time="0.001"/>
+  <testcase name="getCurrentWord()" classname="JottoTest" time="0.0"/>
   <testcase name="score()" classname="JottoTest" time="0.0"/>
   <testcase name="updateWordList()" classname="JottoTest" time="0.001"/>
-  <testcase name="playerGuessScores()" classname="JottoTest" time="0.001"/>
-  <testcase name="addPlayerGuess()" classname="JottoTest" time="0.001">
+  <testcase name="playerGuessScores()" classname="JottoTest" time="0.0"/>
+  <testcase name="addPlayerGuess()" classname="JottoTest" time="0.002">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -81,10 +81,12 @@
   </testcase>
   <testcase name="setFilename()" classname="JottoTest" time="0.0"/>
   <testcase name="getFilename()" classname="JottoTest" time="0.001"/>
-  <testcase name="getPlayerGuesses()" classname="JottoTest" time="0.002"/>
-  <testcase name="getScore()" classname="JottoTest" time="0.001"/>
+  <testcase name="getPlayerGuesses()" classname="JottoTest" time="0.001"/>
+  <testcase name="getScore()" classname="JottoTest" time="0.0"/>
   <testcase name="getWordList()" classname="JottoTest" time="0.0"/>
-  <system-out><![CDATA[Checking oiled
+  <system-out><![CDATA[No guesses yet
+No guesses yet
+Checking oiled
 Checking grant
 Checking adieu
 Checking salet

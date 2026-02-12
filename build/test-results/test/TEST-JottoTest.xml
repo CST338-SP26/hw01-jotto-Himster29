@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="JottoTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2026-02-12T05:54:16.914Z" hostname="HYPC" time="0.026">
+<testsuite name="JottoTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2026-02-12T15:48:15.078Z" hostname="HYPC" time="0.026">
   <properties/>
-  <testcase name="showPlayedWords()" classname="JottoTest" time="0.01"/>
-  <testcase name="setCurrentWord()" classname="JottoTest" time="0.001"/>
+  <testcase name="showPlayedWords()" classname="JottoTest" time="0.009"/>
+  <testcase name="setCurrentWord()" classname="JottoTest" time="0.0"/>
   <testcase name="showPlayerGuesses()" classname="JottoTest" time="0.001"/>
   <testcase name="readWords()" classname="JottoTest" time="0.001"/>
   <testcase name="showWordList()" classname="JottoTest" time="0.0"/>
-  <testcase name="pickWord()" classname="JottoTest" time="0.002"/>
-  <testcase name="getPlayedWords()" classname="JottoTest" time="0.0"/>
+  <testcase name="pickWord()" classname="JottoTest" time="0.001"/>
+  <testcase name="getPlayedWords()" classname="JottoTest" time="0.001"/>
   <testcase name="getLetterCount()" classname="JottoTest" time="0.001"/>
   <testcase name="getCurrentWord()" classname="JottoTest" time="0.001"/>
-  <testcase name="score()" classname="JottoTest" time="0.001"/>
+  <testcase name="score()" classname="JottoTest" time="0.0"/>
   <testcase name="updateWordList()" classname="JottoTest" time="0.0"/>
   <testcase name="playerGuessScores()" classname="JottoTest" time="0.001"/>
-  <testcase name="addPlayerGuess()" classname="JottoTest" time="0.001"/>
+  <testcase name="addPlayerGuess()" classname="JottoTest" time="0.0"/>
   <testcase name="setFilename()" classname="JottoTest" time="0.0"/>
   <testcase name="getFilename()" classname="JottoTest" time="0.001"/>
-  <testcase name="getPlayerGuesses()" classname="JottoTest" time="0.0"/>
+  <testcase name="getPlayerGuesses()" classname="JottoTest" time="0.001"/>
   <testcase name="getScore()" classname="JottoTest" time="0.001"/>
   <testcase name="getWordList()" classname="JottoTest" time="0.0"/>
-  <system-out><![CDATA[adieu
+  <system-out><![CDATA[salet
 No guesses yet
 Current player guesses:
-salet
+adieu
 Would you like to add the words to the word list? (y/n) Checking oiled
 Checking grant
 Checking adieu
 Checking salet
+oiled
 grant
-salet
-Pickword test: salet
+Pickword test: grant
 adieu
 Pickword test: adieu
-oiled
-Pickword test: oiled
+salet
+Pickword test: salet
 You've guessed them all!
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

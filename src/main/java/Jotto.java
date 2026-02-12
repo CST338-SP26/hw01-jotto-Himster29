@@ -108,6 +108,7 @@ public class Jotto {
     }
 
     public void setCurrentWord(String word){
+        word = word.toLowerCase();
         currentWord= word;
     }
 
@@ -123,7 +124,7 @@ public class Jotto {
 
             //adds each word to the array
             while (sc.hasNextLine()){
-                String input = sc.nextLine().trim();
+                String input = sc.nextLine().trim().toLowerCase();
                 if(!input.isEmpty()){
                     if(!wordList.contains(input)){
                         wordList.add(input);
@@ -133,7 +134,6 @@ public class Jotto {
 
             }
 
-            sc.close();
 
         //error message if file not found
         } catch(FileNotFoundException e){
@@ -190,8 +190,13 @@ public class Jotto {
                     System.out.printf("I don't know what \"%s\" is.%n", input);
                 }
             }
+
+            System.out.println("Press enter to continue");
+            if (sc.hasNextLine()) {
+                sc.nextLine();
+            }
+
         }
-        sc.close();
 
     }
 
@@ -308,6 +313,7 @@ public class Jotto {
 
 
     public boolean addPlayerGuess(String wordGuess){
+        wordGuess = wordGuess.toLowerCase();
 
         //checks if the word is in the list
         if(!playGuesses.contains(wordGuess)){
@@ -322,6 +328,7 @@ public class Jotto {
 
         // check for duplicates
         for (String word : playGuesses) {
+            word = word.trim().toLowerCase();
             if (!wordList.contains(word)) {
                 wordList.add(word);
             }

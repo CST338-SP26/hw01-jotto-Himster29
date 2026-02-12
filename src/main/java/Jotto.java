@@ -7,32 +7,49 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.HashSet;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.*;
 
 
 
 public class Jotto {
     //Variables
-    private int WORD_SIZE = 5;
+    private static final int WORD_SIZE = 5;
     private int score = 0;
-    private String currentWord = "";
+    private String currentWord = null;
     private String filename = "wordList.txt";
-    private ArrayList<String> playGuesses = new ArrayList<>();
-    private ArrayList<String> playWords = new ArrayList<>();
-    private ArrayList<String> wordList = new ArrayList<>();
-    private boolean DEBUG = true;
+    private final ArrayList<String> playGuesses = new ArrayList<>();
+    private final ArrayList<String> playWords = new ArrayList<>();
+    private final ArrayList<String> wordList = new ArrayList<>();
+    private static final boolean DEBUG = true;
 
-    private Scanner sc = new Scanner(System.in);
+    //private Scanner sc = new Scanner(System.in);
+    private Random rand = new Random();
+
 
 
     //Methods
     public boolean pickWord(){
-        return false;
+
+        if(playWords.size() == wordList.size()){
+            System.out.println("You've guessed them all!" );
+            return false;
+        }
+
+        currentWord = wordList.get(rand.nextInt(wordList.size()));
+
+
+            if(playWords.contains(currentWord)){
+                return pickWord();
+            }
+
+        playWords.add(currentWord);
+
+        if(DEBUG){
+            System.out.println(currentWord);
+        }
+            return true;
     }
 
     public String showWordList(){
@@ -52,6 +69,7 @@ public class Jotto {
     }
 
     public ArrayList<String> showPlayerGuesses() {
+        Scanner sc = new Scanner(System.in);
 
         //checks if the list is empty
         if (playGuesses.isEmpty()) {
@@ -66,23 +84,31 @@ public class Jotto {
             }
 
             //ask user if they want to update the list
-            System.out.print("Update word list (y/n)? ");
+            System.out.print("Would you like to add the words to the word list? (y/n) ");
             String input = sc.nextLine().trim().toLowerCase();
 
             if(input.equals("y") || input.equals("yes")){
                 updateWordList();
+                System.out.println("Updating word list");
                 System.out.println(showWordList());
             }
         }
         return playGuesses;
     }
 
-    void playerGuessScores(ArrayList<String> word) {
+    void playerGuessScores(ArrayList<String> guesses) {
 
+        System.out.println("Guess\t\tScore");
+
+        for (String guess : guesses) {
+
+            System.out.println(guess + "\t\t" + getLetterCount(guess));
+
+        }
     }
 
     public void setCurrentWord(String word){
-
+        currentWord= word;
     }
 
     public ArrayList<String> readWords(){
@@ -118,16 +144,12 @@ public class Jotto {
     }
 
     public void play(){
-        //Scanner sc = new Scanner(System.in);
-
+        Scanner sc = new Scanner(System.in);
         boolean playing = true;
-
-
 
         while(playing){
 
             System.out.println("Welcome to the game.");
-            //System.out.println("Current Score: " + getScore());
             System.out.println("=-=-=-=-=-=-=-=-=-=-=");
             System.out.println("Choose one of the following:");
             System.out.println("1:        Start the game");
@@ -144,20 +166,23 @@ public class Jotto {
                 case "1", "one" ->{
                     if (pickWord()) {
                         score = guess();
+                        System.out.println("Your score is " + score);
                     } else {
                         showPlayerGuesses();
                     }
                 }
                 case "2", "two" ->{
-                    showWordList();
+                    System.out.println(showWordList());
                 }
                 case "3", "three" ->{
-                    showPlayedWords();
+                    System.out.println(showPlayedWords());
                 }
                 case "4", "four" ->{
                     showPlayerGuesses();
                 }
                 case "zz" ->{
+                    System.out.println("Final score: " + score);
+                    System.out.println("Thank you for playing");
                     playing = false;
 
                 }
@@ -187,6 +212,8 @@ public class Jotto {
 
             //checks for quit condition
             if(wordGuess.equals("q")){
+                System.out.println("Current Score: " + score);
+                System.out.print("Current Word: " + currentWord);
                 return Math.min(score, 0);
             }
 
@@ -232,7 +259,6 @@ public class Jotto {
     }
 
     public ArrayList<String> getPlayedWords() {
-
         return playWords;
     }
 
@@ -241,6 +267,8 @@ public class Jotto {
     }
 
     public int getLetterCount(String word) {
+        word = word.toLowerCase();
+
         if (currentWord.equals(word)) {
             return WORD_SIZE;
         }
@@ -265,7 +293,7 @@ public class Jotto {
     public String showPlayedWords() {
         //checks if the list is empty
         if (playWords.isEmpty()) {
-            return "No words have been played";
+            return "No words have been played.";
         }
 
         StringBuilder sb = new StringBuilder("Current list of played words:\n");
@@ -279,10 +307,15 @@ public class Jotto {
     }
 
 
-    public boolean addPlayerGuess(String word){
-        boolean check= false;
+    public boolean addPlayerGuess(String wordGuess){
 
-        return check;
+        //checks if the word is in the list
+        if(!playGuesses.contains(wordGuess)){
+            playGuesses.add(wordGuess);
+            return true;
+        }
+
+        return false;
     }
 
     void updateWordList() {

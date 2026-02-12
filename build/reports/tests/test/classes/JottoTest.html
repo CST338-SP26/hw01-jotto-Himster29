@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">5</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.028s</div>
+<div class="counter">0.022s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">72%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,113 +61,12 @@
 <div class="tab-container">
 <ul class="tabLinks">
 <li>
-<a href="#">Failed tests</a>
-</li>
-<li>
 <a href="#">Tests</a>
 </li>
 <li>
 <a href="#">Standard output</a>
 </li>
 </ul>
-<div class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="addPlayerGuess()"></a>
-<h3 class="failures">addPlayerGuess()</h3>
-<span class="code">
-<pre id="test-message-addPlayerGuess()">org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at app//org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
-	at app//org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
-	at app//org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
-	at app//org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
-	at app//JottoTest.addPlayerGuess(JottoTest.java:188)
-	at java.base@17.0.18/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
-</pre>
-<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="test-message-addPlayerGuess()">Copy</button>
-</span>
-</div>
-<div class="test">
-<a name="getLetterCount()"></a>
-<h3 class="failures">getLetterCount()</h3>
-<span class="code">
-<pre id="test-message-getLetterCount()">org.opentest4j.AssertionFailedError: expected: &lt;5&gt; but was: &lt;0&gt;
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
-	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:527)
-	at app//JottoTest.getLetterCount(JottoTest.java:156)
-	at java.base@17.0.18/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
-</pre>
-<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="test-message-getLetterCount()">Copy</button>
-</span>
-</div>
-<div class="test">
-<a name="pickWord()"></a>
-<h3 class="failures">pickWord()</h3>
-<span class="code">
-<pre id="test-message-pickWord()">org.opentest4j.AssertionFailedError: expected: &lt;null&gt; but was: &lt;&gt;
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at app//org.junit.jupiter.api.AssertNull.failNotNull(AssertNull.java:50)
-	at app//org.junit.jupiter.api.AssertNull.assertNull(AssertNull.java:35)
-	at app//org.junit.jupiter.api.AssertNull.assertNull(AssertNull.java:30)
-	at app//org.junit.jupiter.api.Assertions.assertNull(Assertions.java:275)
-	at app//JottoTest.pickWord(JottoTest.java:169)
-	at java.base@17.0.18/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
-</pre>
-<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="test-message-pickWord()">Copy</button>
-</span>
-</div>
-<div class="test">
-<a name="showPlayedWords()"></a>
-<h3 class="failures">showPlayedWords()</h3>
-<span class="code">
-<pre id="test-message-showPlayedWords()">org.opentest4j.AssertionFailedError: expected: &lt;No words have been played.&gt; but was: &lt;No words have been played&gt;
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1141)
-	at app//JottoTest.showPlayedWords(JottoTest.java:116)
-	at java.base@17.0.18/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
-</pre>
-<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="test-message-showPlayedWords()">Copy</button>
-</span>
-</div>
-<div class="test">
-<a name="showPlayerGuesses()"></a>
-<h3 class="failures">showPlayerGuesses()</h3>
-<span class="code">
-<pre id="test-message-showPlayerGuesses()">org.opentest4j.AssertionFailedError: expected: &lt;false&gt; but was: &lt;true&gt;
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at app//org.junit.jupiter.api.AssertFalse.failNotFalse(AssertFalse.java:63)
-	at app//org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:36)
-	at app//org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:31)
-	at app//org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:227)
-	at app//JottoTest.showPlayerGuesses(JottoTest.java:143)
-	at java.base@17.0.18/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base@17.0.18/java.util.ArrayList.forEach(ArrayList.java:1511)
-</pre>
-<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="test-message-showPlayerGuesses()">Copy</button>
-</span>
-</div>
-</div>
 <div class="tab">
 <h2>Tests</h2>
 <table>
@@ -179,9 +78,9 @@
 </tr>
 </thead>
 <tr>
-<td class="failures">addPlayerGuess()</td>
-<td class="failures">0.001s</td>
-<td class="failures">failed</td>
+<td class="success">addPlayerGuess()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getCurrentWord()</td>
@@ -194,18 +93,18 @@
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">getLetterCount()</td>
-<td class="failures">0.001s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="success">getPlayedWords()</td>
+<td class="success">getLetterCount()</td>
 <td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">getPlayedWords()</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">getPlayerGuesses()</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -215,17 +114,17 @@
 </tr>
 <tr>
 <td class="success">getWordList()</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">pickWord()</td>
-<td class="failures">0.002s</td>
-<td class="failures">failed</td>
+<td class="success">pickWord()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">playerGuessScores()</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -235,12 +134,12 @@
 </tr>
 <tr>
 <td class="success">score()</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">setCurrentWord()</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -249,14 +148,14 @@
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">showPlayedWords()</td>
-<td class="failures">0.012s</td>
-<td class="failures">failed</td>
+<td class="success">showPlayedWords()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">showPlayerGuesses()</td>
-<td class="failures">0.005s</td>
-<td class="failures">failed</td>
+<td class="success">showPlayerGuesses()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">showWordList()</td>
@@ -273,12 +172,22 @@
 <div class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre id="class-stdout">No guesses yet
+<pre id="class-stdout">adieu
 No guesses yet
-Checking oiled
+Current player guesses:
+salet
+Would you like to add the words to the word list? (y/n) Checking oiled
 Checking grant
 Checking adieu
 Checking salet
+grant
+salet
+Pickword test: salet
+adieu
+Pickword test: adieu
+oiled
+Pickword test: oiled
+You've guessed them all!
 </pre>
 <button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stdout">Copy</button>
 </span>
@@ -291,7 +200,7 @@ Checking salet
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.2.0</a> at Feb 10, 2026, 9:37:20 PM</p>
+<a href="https://www.gradle.org">Gradle 9.2.0</a> at Feb 11, 2026, 9:54:16 PM</p>
 </div>
 </div>
 </body>

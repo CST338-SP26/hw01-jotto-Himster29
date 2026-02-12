@@ -9,6 +9,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.HashSet;
+import java.io.FileWriter;
+import java.io.IOException;
+
 
 
 public class Jotto {
@@ -235,16 +240,27 @@ public class Jotto {
         return currentWord;
     }
 
-    public int getLetterCount(String word){
-        int count = 0;
-
-        if(word.equals(currentWord)){
-            return 5;
+    public int getLetterCount(String word) {
+        if (currentWord.equals(word)) {
+            return WORD_SIZE;
         }
 
+        Set<Character> guessSet = new HashSet<>();
+        Set<Character> wordSet = new HashSet<>();
 
-        return count;
+        for (char c : word.toCharArray()) {
+            guessSet.add(c);
+        }
+
+        for (char c : currentWord.toCharArray()) {
+            wordSet.add(c);
+        }
+
+        guessSet.retainAll(wordSet);
+
+        return guessSet.size();
     }
+
 
     public String showPlayedWords() {
         //checks if the list is empty
@@ -269,9 +285,27 @@ public class Jotto {
         return check;
     }
 
-    void updateWordList(){
+    void updateWordList() {
 
+        // check for duplicates
+        for (String word : playGuesses) {
+            if (!wordList.contains(word)) {
+                wordList.add(word);
+            }
+        }
+
+        //writes to the file
+        try (FileWriter writer = new FileWriter(filename)) {
+
+            for (String word : wordList) {
+                writer.write(word + System.lineSeparator());
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 
     public Jotto(String filename) {
         this.filename = filename;

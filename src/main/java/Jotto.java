@@ -3,6 +3,7 @@
  * Class: CST 348
  * Project: Jotto first assignment
  *
+ *
  * Description:
  * This assignment implements a console-based version of the word game Jotto.
  * The program reads a list of 5 words from a file, randomly selects
@@ -10,6 +11,7 @@
  * correct word is found or the player quits. For each guess, the program
  * calculates a Jotto score. The game tracks previously played
  * words, player guesses, and maintains a running score across all rounds.
+ *
  *
  **/
 

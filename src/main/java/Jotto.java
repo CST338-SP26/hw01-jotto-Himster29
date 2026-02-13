@@ -3,6 +3,14 @@
  * Class: CST 348
  * Project: Jotto first assignment
  *
+ * Description:
+ * This assignment implements a console-based version of the word game Jotto.
+ * The program reads a list of five-letter words from a file, randomly selects
+ * a secret word, and allows the player to guess words until the
+ * correct word is found or the player quits. For each guess, the program
+ * calculates a Jotto score. The game tracks previously played
+ * words, player guesses, and maintains a running score across all rounds.
+ *
  **/
 
 import java.io.File;
@@ -24,7 +32,6 @@ public class Jotto {
     private final ArrayList<String> wordList = new ArrayList<>();
     private static final boolean DEBUG = true;
 
-    //private Scanner sc = new Scanner(System.in);
     private Random rand = new Random();
 
 
@@ -32,14 +39,16 @@ public class Jotto {
     //Methods
     public boolean pickWord(){
 
+        //checks to see if all words were guessed
         if(playWords.size() == wordList.size()){
             System.out.println("You've guessed them all!" );
             return false;
         }
 
+        //gets a random word from the list
         currentWord = wordList.get(rand.nextInt(wordList.size()));
 
-
+        //recursively checks for word was used and picks a new word
             if(playWords.contains(currentWord)){
                 return pickWord();
             }
@@ -53,6 +62,7 @@ public class Jotto {
     }
 
     public String showWordList(){
+
         //checks if the list is empty
         if (wordList.isEmpty()) {
             return "No words are on the list";
@@ -98,12 +108,11 @@ public class Jotto {
 
     void playerGuessScores(ArrayList<String> guesses) {
 
+        //displays the score in propper format
         System.out.println("Guess\t\tScore");
 
         for (String guess : guesses) {
-
             System.out.println(guess + "\t\t" + getLetterCount(guess));
-
         }
     }
 
@@ -129,11 +138,8 @@ public class Jotto {
                     if(!wordList.contains(input)){
                         wordList.add(input);
                     }
-
                 }
-
             }
-
 
         //error message if file not found
         } catch(FileNotFoundException e){
@@ -147,9 +153,11 @@ public class Jotto {
         Scanner sc = new Scanner(System.in);
         boolean playing = true;
 
+        //main game loop
         while(playing){
-
+            //game menu
             System.out.println("Welcome to the game.");
+            System.out.println("Current Score: " + score);
             System.out.println("=-=-=-=-=-=-=-=-=-=-=");
             System.out.println("Choose one of the following:");
             System.out.println("1:        Start the game");
@@ -162,10 +170,11 @@ public class Jotto {
 
             String input = sc.nextLine().trim().toLowerCase();
 
+            //game menu options
             switch(input){
                 case "1", "one" ->{
                     if (pickWord()) {
-                        score = guess();
+                        score += guess();
                         System.out.println("Your score is " + score);
                     } else {
                         showPlayerGuesses();
@@ -191,6 +200,7 @@ public class Jotto {
                 }
             }
 
+            //pause for input
             System.out.println("Press enter to continue");
             if (sc.hasNextLine()) {
                 sc.nextLine();
@@ -260,7 +270,7 @@ public class Jotto {
             playerGuessScores(currentGuesses);
 
         }
-        //return score;
+
     }
 
     public ArrayList<String> getPlayedWords() {
@@ -274,6 +284,7 @@ public class Jotto {
     public int getLetterCount(String word) {
         word = word.toLowerCase();
 
+        // If the guess exactly matches the secret word, return full score
         if (currentWord.equals(word)) {
             return WORD_SIZE;
         }
@@ -281,6 +292,7 @@ public class Jotto {
         Set<Character> guessSet = new HashSet<>();
         Set<Character> wordSet = new HashSet<>();
 
+        //stores unique letters from guess and current word in sets
         for (char c : word.toCharArray()) {
             guessSet.add(c);
         }
@@ -289,8 +301,10 @@ public class Jotto {
             wordSet.add(c);
         }
 
+        //only keeps the letters in both sets
         guessSet.retainAll(wordSet);
 
+        //returns common  letters as the score
         return guessSet.size();
     }
 

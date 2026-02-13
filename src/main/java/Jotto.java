@@ -5,7 +5,7 @@
  *
  * Description:
  * This assignment implements a console-based version of the word game Jotto.
- * The program reads a list of five-letter words from a file, randomly selects
+ * The program reads a list of 5 words from a file, randomly selects
  * a secret word, and allows the player to guess words until the
  * correct word is found or the player quits. For each guess, the program
  * calculates a Jotto score. The game tracks previously played
